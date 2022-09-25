@@ -69,13 +69,12 @@
         }
 
         async function sendMsg() {
-            if (liff.getContext().type !== 'none'){
+            if (liff.getContext().type !== 'none') {
                 await liff.sendMessages([
                     {
-                        'type': 'sticker',
-                        'stickerId': 1,
-                        "packegeId": 1,
-                    }
+                        type: "text",
+                        text: "Hello, World!",
+                    },
                 ])
                 alert('send Completed')
             }
@@ -100,11 +99,11 @@
 
         function getEnvironment() {
             document.getElementById('os').innerHTML = '<b>OS:</b> ' + liff.getOS()
-            document.getElementById('language').innerHTML = '<b>Language:</b> ' + liff.getLanguage() 
+            document.getElementById('language').innerHTML = '<b>Language:</b> ' + liff.getLanguage()
             document.getElementById('version').innerHTML = '<b>Version:</b> ' + liff.getVersion() // แสดง SDK version
-            document.getElementById('accessToken').innerHTML = '<b>accessToken:</b> ' + liff.isLoggedIn() 
+            document.getElementById('accessToken').innerHTML = '<b>accessToken:</b> ' + liff.isLoggedIn()
             document.getElementById('isInClient').innerHTML = '<b>isInClient:</b> ' + liff.isInClient()
-            if (liff.isInClient()){ // ตรวจสอบว่าเปิดใน LINE หรือไม่
+            if (liff.isInClient()) { // ตรวจสอบว่าเปิดใน LINE หรือไม่
                 document.getElementById('btnLogOut').style.display = 'none'
             } else {
                 document.getElementById('btnMsg').style.display = 'none'
