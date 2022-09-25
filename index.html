@@ -80,6 +80,7 @@
             document.getElementById('userId').innerHTML = `<b>userId:</b> ${profile.userId}`
             document.getElementById('displayName').innerHTML = `<b>displayName:</b> ${profile.displayName}`
             document.getElementById('statusMessage').innerHTML = `<b>statusMessage:</b> ${profile.statusMessage}`
+            document.getElementById('decodedIDToken').innerHTML = `<b>email:</b> ${liff.getDecodedIDToken().email}`
         }
 
         function getEnvironment() {
